@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.blazedemo.com/');
+  await page.locator('select[name="fromPort"]').selectOption('Philadelphia');
+  await page.locator('select[name="toPort"]').selectOption('London');
+  await page.getByRole('button', { name: 'Find Flights' }).click();
+  await page.getByRole('row', { name: 'Choose This Flight 43 Virgin' }).getByRole('button').click();
+  await page.getByRole('textbox', { name: 'Name', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Name', exact: true }).fill('Mike Tester');
+  await page.getByRole('textbox', { name: 'Name', exact: true }).press('Tab');
+  await page.getByRole('textbox', { name: 'Address' }).fill('2323 West ');
+  await page.getByRole('textbox', { name: 'Address' }).press('CapsLock');
+  await page.getByRole('textbox', { name: 'Address' }).fill('2323 West ');
+  await page.getByRole('textbox', { name: 'Address' }).press('CapsLock');
+  await page.getByRole('textbox', { name: 'Address' }).fill('2323 West Way Rd');
+  await page.getByRole('textbox', { name: 'Address' }).press('Tab');
+  await page.getByRole('textbox', { name: 'City' }).fill('Plano');
+  await page.getByRole('textbox', { name: 'City' }).press('Tab');
+  await page.getByRole('textbox', { name: 'State' }).fill('TX');
+  await page.getByRole('textbox', { name: 'Zip Code' }).click();
+  await page.getByRole('textbox', { name: 'Zip Code' }).fill('75036');
+  await page.getByRole('textbox', { name: 'Credit Card Number' }).click();
+  await page.getByRole('textbox', { name: 'Credit Card Number' }).fill('424242424242424');
+  await page.getByRole('textbox', { name: 'Month' }).click();
+  await page.getByRole('textbox', { name: 'Name on Card' }).click();
+  await page.getByRole('textbox', { name: 'Name on Card' }).fill('Mike Tester');
+  await page.getByRole('button', { name: 'Purchase Flight' }).click();
+  await expect(page.getByRole('heading', { name: 'Thank you for your purchase' })).toBeVisible();
+});
