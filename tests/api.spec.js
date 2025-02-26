@@ -9,7 +9,7 @@ test.describe('API Testing with Playwright (JavaScript)', () => {
     // Check status code
     expect(response.status()).toBe(200);
 
-    // Parse response body as JSON
+    // Parse response body as JSONff
     const data = await response.json();
 
     // Validate the response payload
