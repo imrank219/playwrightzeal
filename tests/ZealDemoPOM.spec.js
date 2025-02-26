@@ -11,7 +11,7 @@ import { Confirmationpage } from '../pages/Confirmation.page';
 test('Book First Flight', async ({ page }) => {
   //  for (let i = 0; i < 5; i++) {
   //      console.log(`Running iteration ${i + 1}`);
-  //  const {departureCity, desitinationCity} = flightData;
+
     const DestPage = new Destinationpage(page)
     const FlyPage = new Flightpage(page)
     const ReserPage = new Reservationpage(page)
