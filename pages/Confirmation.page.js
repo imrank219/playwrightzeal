@@ -40,15 +40,15 @@ export class Confirmationpage {
     console.log(content)
 
     // Write content to a file
-    fs.writeFileSync('C:/AutoPW/testdata/output.txt', content, 'utf8');
+    fs.writeFileSync('F:/PWZealWork/playwrightzeal/testdata/output.txt', content, 'utf8');
     console.log('Content written to output.txt');
 
     ///C:/Playwright/testdata/output.txt
 
-    const content2 = fs.readFileSync('C:/AutoPW/testdata/output.txt', 'utf8');
+    const content2 = fs.readFileSync('F:/PWZealWork/playwrightzeal/testdata/output.txt', 'utf8');
     console.log('Content read from input.txt:', content);
 
-    var datefield = fs.readFileSync('C:/AutoPW/testdata/output.txt').toString();
+    var datefield = fs.readFileSync('F:/PWZealWork/playwrightzeal/testdata/output.txt').toString();
     console.log(datefield);
 
     await expect(this.date).toContainText(datefield);
