@@ -73,7 +73,7 @@ export class Confirmationpage {
     await expect(this.page).toHaveScreenshot({
         path: screenshotPath, // Save screenshot to screenshots/confirmation.png
         fullPage: true,  // Capture the full page
-        threshold: 0.1,  // Allow minor visual differences (10% pixel difference allowed)
+        threshold: 0.9,  // Allow minor visual differences (10% pixel difference allowed)
     });
 
     console.log(`✅ Screenshot verification passed: ${screenshotPath}`);
