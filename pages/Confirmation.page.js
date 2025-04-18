@@ -63,6 +63,7 @@ export class Confirmationpage {
   validateScreenShot = async (screenshotName = 'confirmation-page.png') => {
     const screenshotDir = path.resolve('screenshots');
     const screenshotPath = path.join(screenshotDir, 'confirmation.png');
+    console.log(screenshotPath);
 
     // Ensure the screenshots directory exists
     if (!fs.existsSync(screenshotDir)) {
@@ -73,7 +74,7 @@ export class Confirmationpage {
     await expect(this.page).toHaveScreenshot({
         path: screenshotPath, // Save screenshot to screenshots/confirmation.png
         fullPage: true,  // Capture the full page
-        threshold: 0.9,  // Allow minor visual differences (50% pixel difference allowed)
+        threshold: 0.90,  // Allow minor visual differences (50% pixel difference allowed)
     });
 
     console.log(`✅ Screenshot verification passed: ${screenshotPath}`);
