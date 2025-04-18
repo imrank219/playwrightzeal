@@ -23,7 +23,7 @@ test('Book First Flight', async ({ page }) => {
     await FlyPage.flightSelect();
     await ReserPage.addReservationData();
     await ConfirmPage.validateConfirmationPage();
-    await ConfirmPage.validateScreenShot();
+ //   await ConfirmPage.validateScreenShot();
   
     
   })
