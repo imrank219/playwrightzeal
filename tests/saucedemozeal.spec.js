@@ -3,6 +3,7 @@ import { Loginsaucepage} from '../pages/loginsauce.page';
 import { Inventorysaucepage } from '../pages/inventory.page'
 import { Cartsaucepage } from '../pages/Cart.page';
 import { Infosaucepage } from '../pages/Info.page';
+import { Checksaucepage } from '../pages/Checkout.page';
 
 test.use({storageState: "authsauce.json"});
 test('Zeal sauce demo', async ({ page }) => {
@@ -11,6 +12,7 @@ test('Zeal sauce demo', async ({ page }) => {
   const invent = new Inventorysaucepage(page);
   const cart = new Cartsaucepage(page);
   const inform = new Infosaucepage(page);
+  const checkp = new Checksaucepage(page);
 
  // await loginnew.visitsauce();
  // await loginnew.loginflow();
@@ -18,5 +20,6 @@ test('Zeal sauce demo', async ({ page }) => {
   await invent.selectbackPack();
   await cart.cartflow();
   await inform.InfoFlow();
+  await checkp.checkflow();
     
   })
