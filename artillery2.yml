@@ -1,15 +1,17 @@
 config:
   target: https://www.saucedemo.com/
   engines:
-    playwright: 
-       launchOptions:
+    playwright:
+      extendedMetrics: true    
+      launchOptions:
         headless: true
   processor: "./tests/artillery/login.js"
   phases:
-    # injects 2 user every second 20 seconds
-    - name: constantArrival
-      duration: 10
+    # injects 1 user every 2 second 20 seconds
+    - name: RampUp
+      duration: 20
       arrivalRate: 2
+      rampTo: 1
 scenarios:
   - engine: playwright
     testFunction: "artilleryScript"
