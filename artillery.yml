@@ -1,0 +1,13 @@
+config:
+  target: https://www.saucedemo.com/
+  engines:
+    playwright: {}  
+  processor: "./tests/artillery/login.js"
+  phases:
+    # injects 2 user every second 20 seconds
+    - name: constantArrival
+      duration: 10
+      arrivalRate: 2
+scenarios:
+  - engine: playwright
+    testFunction: "artilleryScript"
