@@ -19,12 +19,27 @@ constructor(page){
     await this.page.goto("https://www.saucedemo.com/")
    }
 
+   loginflow_old = async () =>{
+
+    await this.username.fill("standard_user");
+    await this.password.fill("secret_sauce");
+    await this.loginbutton.click();
+
+   }
+
    loginflow = async () =>{
 
     await this.username.fill("standard_user");
     await this.password.fill("secret_sauce");
     await this.loginbutton.click();
 
+    await this.page.context().storageState({path: 'authsauce.json' })
+
+   }
+
+   visitsauce2 = async () => {
+
+    await this.page.goto("https://www.saucedemo.com/inventory.html")
    }
 
 

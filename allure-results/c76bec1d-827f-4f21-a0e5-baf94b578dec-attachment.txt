@@ -1,0 +1,4 @@
+$29.99
+Content written to output.txt
+Backpack Amount from file: $29.99
+John
